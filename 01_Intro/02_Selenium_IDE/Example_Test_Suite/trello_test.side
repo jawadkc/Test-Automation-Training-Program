@@ -1,0 +1,228 @@
+{
+  "id": "ef1c1189-1e80-44df-80af-6265cba2c344",
+  "version": "2.0",
+  "name": "Trello",
+  "url": "https://trello.com",
+  "tests": [{
+    "id": "c4d3726c-7cca-402c-8af2-9cbf5e5700f0",
+    "name": "Trello Login",
+    "commands": [{
+      "id": "5fcd14a1-ef25-4383-9beb-92a2a49547b7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5a7981f1-1d0e-4c96-9f3b-038bd94b31ad",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "922x692",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b9b940bb-cfbe-41a6-b4af-1699017a250a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Log In",
+      "targets": [
+        ["linkText=Log In", "linkText"],
+        ["css=.btn-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Log In')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "64e9c66d-d7c7-48e4-aaed-b564cbdab4e7",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "570f3302-7cd1-44a6-84c6-7779e61b0f8d",
+      "comment": "",
+      "command": "click",
+      "target": "id=user",
+      "targets": [
+        ["id=user", "id"],
+        ["name=user", "name"],
+        ["css=#user", "css:finder"],
+        ["xpath=//input[@id='user']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7edf5ccc-dc04-43b1-8f0d-1825c5c097ee",
+      "comment": "",
+      "command": "type",
+      "target": "id=user",
+      "targets": [
+        ["id=user", "id"],
+        ["name=user", "name"],
+        ["css=#user", "css:finder"],
+        ["xpath=//input[@id='user']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/input", "xpath:position"]
+      ],
+      "value": "jawad.k.cheema+tests@gmail.com"
+    }, {
+      "id": "4d2fe107-5550-460a-8ae2-403a2ae1a62d",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-entry']/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ceba6c2b-16f2-409e-bf19-fdaaaf938577",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-entry']/input", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "jawadjawad"
+    }, {
+      "id": "0b5afc01-b41d-4851-bb55-532bd46292cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["css=#login", "css:finder"],
+        ["xpath=//input[@id='login']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7f83cc8-cc0b-4967-b865-b076e41450c0",
+      "comment": "",
+      "command": "waitForElementNotPresent",
+      "target": "id=login",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "7b10e9ea-f532-43af-8f20-ec693ba3af21",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "3d469913-c3f5-4519-8e95-aeadde94eb18",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.boards-page-board-section-header-name",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "ecb3011d-d440-4679-9bec-ac38d2567bc4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.boards-page-board-section-header-name",
+      "targets": [
+        ["css=.boards-page-board-section-header-name", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[2]/div/div/div/div/div[2]/div/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Personal Boards')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24326817-632b-4a11-86fe-23551768a956",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.boards-page-board-section-header-name",
+      "targets": [
+        ["css=.boards-page-board-section-header-name", "css:finder"],
+        ["xpath=//div[@id='content']/div/div[2]/div/div/div/div/div[2]/div/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Personal Boards')]", "xpath:innerText"]
+      ],
+      "value": "Personal Boards"
+    }, {
+      "id": "c78eb937-8164-4b05-9bc6-de5ebd6d4546",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_24AWINHReYjNBf",
+      "targets": [
+        ["css=.\\_24AWINHReYjNBf", "css:finder"],
+        ["xpath=//div[@id='header']/div[2]/button[3]/div/span", "xpath:idRelative"],
+        ["xpath=//button[3]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'J')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eef8e98e-5c47-406a-af35-f3e514ce6c7e",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(8) .\\_1uK2vQ_aMRS2NU",
+      "targets": [
+        ["css=li:nth-child(8) .\\_1uK2vQ_aMRS2NU", "css:finder"],
+        ["xpath=//div[@id='layer-manager-popover']/div/div[3]/nav/ul/li[8]/button/span", "xpath:idRelative"],
+        ["xpath=//li[8]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Log Out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "871af59e-ce5f-4156-a86c-a4250989900a",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "c5eae86f-ea6a-462f-bc68-24a8ce1fd7a5",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "linkText=Log In",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "49cf7893-28d8-4511-b2ca-8e048cb58a75",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Log In",
+      "targets": [
+        ["linkText=Log In", "linkText"],
+        ["css=.global-header-section-button:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Log In')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "99a6dd03-b76d-4a44-b2fb-a8f4480c07d9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c4d3726c-7cca-402c-8af2-9cbf5e5700f0"]
+  }],
+  "urls": ["https://trello.com/"],
+  "plugins": []
+}
