@@ -1,0 +1,20 @@
+{
+  "name": "trello-test-proj",
+  "version": "0.0.0",
+  "description": "TrelloTestProj",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jawadkc/-Test-Automation-Training-Program.git"
+  },
+  "author": {
+    "name": "Jawad Cheema"
+  },
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "dependencies": {
+    "nightwatch": "1.2.4",
+    "chromedriver": "77.0.0"
+  }
+}
