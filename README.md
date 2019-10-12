@@ -33,3 +33,21 @@ We tried to setup and run some basic nightwatch tests
 * [Update the test to use page objects](03_Nightwatch/01_Getting_Started/README.md#update-the-test-to-use-page-objects)
 
 Sample Project is available [here](03_Nightwatch/01_Getting_Started/Sample_Project)
+
+## Lecture 4
+
+We tried to understand a bit more about Nightwatch and explore how to use it more efficiently
+
+* [Setup global launch URL](03_Nightwatch/02_Going_Futher_With_Nightwatch)
+* [Explore how to switch between xpath and css selector in Nightwatch](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#explore-different-locate-strategies)
+* [Explore page object sections in Nightwatch](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#explore-page-object-sections)
+* [Chaining of commands in nightwatch](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#chaining-of-commands)
+* [Explore this object in scope of Nightwatch](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#explore-this-object)
+* [Understand different assertions](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#understand-different-assertions)
+* [Understand different assertions](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#understand-different-assertions)
+* [Explore callbacks in Nightwatch api](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#explore-callbacks)
+* [Explore ES6 async await from the perspective of Nightwatch commands](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#explore-es6-async-await)
+* [Divide test in steps](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#divide-test-in-steps)
+* [Make use of hooks in test files](03_Nightwatch/02_Going_Futher_With_Nightwatch/README.md#make-use-of-hooks)
+
+Sample Project is available [here](03_Nightwatch/02_Going_Futher_With_Nightwatch/Sample_Project)
