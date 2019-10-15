@@ -54,23 +54,23 @@ Sample Project is available [here](03_Nightwatch/02_Going_Futher_With_Nightwatch
 
 ## Assignment
 
-A small automation needs to be be done. The details of task are available at [Assignment > Readme.md](03_Nightwatch\03_Assignment_01\README.md)
+A small automation needs to be be done. The details of task are available at [Assignment > Readme.md](03_Nightwatch/03_Assignment_01/README.md)
 
-A possible workable solution is available [here](03_Nightwatch\03_Assignment_01\Possible_solution)
+A possible workable solution is available [here](03_Nightwatch/03_Assignment_01/Possible_solution)
 
 
 ## Lecture 5
 
 We tried to develop further understanding of nightwatch and some framework improvements by re-doing and discussing the solution for above assignment
 
-* [Handling multiple related projects](03_Nightwatch\04_Some_Framework_Improvements\README.md#handling-multiple-related-projects)
-* [Tags](03_Nightwatch\04_Some_Framework_Improvements\README.md#tags)
-* [Disabling Tests](03_Nightwatch\04_Some_Framework_Improvements\README.md#disabling-tests)
-* [Explore retries and cli Commands](03_Nightwatch\04_Some_Framework_Improvements\README.md#retries-and-other-cli-commands)
-* [Explore element Index](03_Nightwatch\04_Some_Framework_Improvements\README.md#retries-and-other-cli-commands)
-* [More Dynamic selectors in page objects](03_Nightwatch\04_Some_Framework_Improvements\README.md#more-dynamic-selectors)
-* [useXpath and useCss](03_Nightwatch\04_Some_Framework_Improvements\README.md#usexpath-and-usecss)
-* [Explore Page Props](03_Nightwatch\04_Some_Framework_Improvements\README.md#explore-page-props)
-* [Test Data](03_Nightwatch\04_Some_Framework_Improvements\README.md#test-data)
-* [External globals](03_Nightwatch\04_Some_Framework_Improvements\README.md#external-globals)
-* [Read and Use of value in subsequent steps](03_Nightwatch\04_Some_Framework_Improvements\README.md#read-and-use-value)
+* [Handling multiple related projects](03_Nightwatch/04_Some_Framework_Improvements/README.md#handling-multiple-related-projects)
+* [Tags](03_Nightwatch/04_Some_Framework_Improvements/README.md#tags)
+* [Disabling Tests](03_Nightwatch/04_Some_Framework_Improvements/README.md#disabling-tests)
+* [Explore retries and cli Commands](03_Nightwatch/04_Some_Framework_Improvements/README.md#retries-and-other-cli-commands)
+* [Explore element Index](03_Nightwatch/04_Some_Framework_Improvements/README.md#retries-and-other-cli-commands)
+* [More Dynamic selectors in page objects](03_Nightwatch/04_Some_Framework_Improvements/README.md#more-dynamic-selectors)
+* [useXpath and useCss](03_Nightwatch/04_Some_Framework_Improvements/README.md#usexpath-and-usecss)
+* [Explore Page Props](03_Nightwatch/04_Some_Framework_Improvements/README.md#explore-page-props)
+* [Test Data](03_Nightwatch/04_Some_Framework_Improvements/README.md#test-data)
+* [External globals](03_Nightwatch/04_Some_Framework_Improvements/README.md#external-globals)
+* [Read and Use of value in subsequent steps](03_Nightwatch/04_Some_Framework_Improvements/README.md#read-and-use-value)
