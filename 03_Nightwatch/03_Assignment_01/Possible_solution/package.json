@@ -11,6 +11,7 @@
     "name": "Jawad Cheema"
   },
   "scripts": {
+    "test": "set LAUNCH_URL=https://trello.com/ && nightwatch --group trello --suiteRetries 2 && set LAUNCH_URL=https://google.com/ && nightwatch --group google --suiteRetries 2",
     "test:trello": "set LAUNCH_URL=https://trello.com/ && nightwatch --group trello --suiteRetries 2",
     "test:google": "set LAUNCH_URL=https://google.com/ && nightwatch --group google --suiteRetries 2",
     "test:trelloff": "set LAUNCH_URL=https://trello.com/ && nightwatch --group trello --suiteRetries 2 --env firefox",

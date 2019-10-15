@@ -13,7 +13,10 @@ module.exports = {
     listHeader: '.list-header',
     addCard: '.open-card-composer',
     newCardTextArea: 'textarea.js-card-title',
-    closeTextArea: '.js-cancel'
+    closeTextArea: '.js-cancel',
+    boardMenuMore: '.js-open-more',
+    closeBoard: '.js-close-board',
+    confirmClose: '.js-confirm[value=Close]'
   },
   props: {
     defaultLists: ['To Do', 'Doing', 'Done']
@@ -86,6 +89,17 @@ module.exports = {
           cardTitle: cardTitle.value,
           listTitle: listTitle.value
         }
+      },
+
+      closeBoard: function() {
+        return this
+          .waitForElementVisible('@boardMenuMore')
+          .click('@boardMenuMore')
+          .waitForElementVisible('@closeBoard')
+          .click('@closeBoard')
+          .waitForElementVisible('@confirmClose')
+          .click('@confirmClose')
+          .waitForElementNotPresent('@boardTitle');
       }
     }
   ]

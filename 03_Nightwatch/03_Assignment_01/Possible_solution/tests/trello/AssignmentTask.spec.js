@@ -31,7 +31,7 @@ module.exports = {
 
   'Create board and verify new board is successfully created and loaded' : () => {
     homePage
-      .createBoard(boardData)
+      .createBoard(boardData);
     boardPage
       .verifyBoardPage(boardData.title)
       .verifyDefaultLists();
@@ -41,14 +41,19 @@ module.exports = {
     cardsData.forEach(card => {
       boardPage
         .closeTextAreaIfVisible()
-        .addCardToSpecificList(card, Math.floor(Math.random()* 3)
-        );
+        .addCardToSpecificList(card, Math.floor(Math.random()* 3));
     });
   },
 
   'Open a card randomly and verify correct card and list info is shown': async () => {
     const selectedCardDetails = await boardPage.openACardByIndex(Math.floor(Math.random()* 5) + 1);
-    cardPage.verifyCardOpened(selectedCardDetails);
+    cardPage
+      .verifyCardOpened(selectedCardDetails)
+      .close();
+  },
+
+  'Delete the board': () => {
+    boardPage.closeBoard();
   }
 
 };

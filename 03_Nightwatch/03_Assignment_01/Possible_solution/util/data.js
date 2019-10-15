@@ -2,8 +2,8 @@ const faker = require('faker');
 
 module.exports = {
   testData: {
-    email: 'jawad.k.cheema+tests@gmail.com',
-    password: 'jawadjawad'
+    email: 'your email account',
+    password: 'your password'
   },
   boardData: {
     title: faker.random.words()
