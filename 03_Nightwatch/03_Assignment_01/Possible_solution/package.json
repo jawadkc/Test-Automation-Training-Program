@@ -1,0 +1,28 @@
+{
+  "name": "trello-test-proj",
+  "version": "0.0.0",
+  "description": "TrelloTestProj",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jawadkc/-Test-Automation-Training-Program.git"
+  },
+  "author": {
+    "name": "Jawad Cheema"
+  },
+  "scripts": {
+    "test": "set LAUNCH_URL=https://trello.com/ && nightwatch --group trello --suiteRetries 2 && set LAUNCH_URL=https://google.com/ && nightwatch --group google --suiteRetries 2",
+    "test:trello": "set LAUNCH_URL=https://trello.com/ && nightwatch --group trello --suiteRetries 2",
+    "test:google": "set LAUNCH_URL=https://google.com/ && nightwatch --group google --suiteRetries 2",
+    "test:trelloff": "set LAUNCH_URL=https://trello.com/ && nightwatch --group trello --suiteRetries 2 --env firefox",
+    "test:googleff": "set LAUNCH_URL=https://google.com/ && nightwatch --group google --suiteRetries 2 --env firefox",
+    "test:trello-smoke": "set LAUNCH_URL=https://trello.com/ && nightwatch --tag smoke  --suiteRetries 2",
+    "test:trello-debug": "set LAUNCH_URL=https://trello.com/ && node debug node_modules/nightwatch/bin/runner.js --group trello"
+  },
+  "dependencies": {
+    "nightwatch": "1.2.4",
+    "chromedriver": "77.0.0",
+    "geckodriver": "1.18.0",
+    "faker": "4.1.0"
+  }
+}

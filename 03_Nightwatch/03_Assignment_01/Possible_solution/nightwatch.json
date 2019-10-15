@@ -1,0 +1,31 @@
+{
+    "src_folders" : ["tests"],
+    "page_objects_path": ["pages"],
+    "globals_path": "./util/globals.js",
+
+    "webdriver" : {
+        "start_process": true
+    },
+
+    "test_settings" : {
+        "default" : {
+            "launch_url": "https://google.com",
+            "webdriver" : {
+              "server_path": "node_modules/.bin/chromedriver.cmd",
+              "port": 9515
+            },
+            "desiredCapabilities": {
+                "browserName": "chrome"
+            }
+        },
+        "firefox" : {
+            "webdriver" : {
+              "server_path": "node_modules/.bin/chromedriver.cmd",
+              "port": 4444
+            },
+            "desiredCapabilities": {
+                "browserName": "firefox"
+            }
+        }
+    }
+}
