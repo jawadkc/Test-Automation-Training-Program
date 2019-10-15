@@ -16,14 +16,3 @@
     * https://nightwatchjs.org/guide/running-tests/#command-line-options
 5. You should be able to run the tests against different browsers using different environment configurations
     * `Environment specific settings` section in https://nightwatchjs.org/gettingstarted/configuration/#base-settings
-
-
-## Explore random selection using element Index
-
-## Explore read text and use it in subsequent Steps
-
-## Explore globals and external globals
-
-## Explore retries and cli Commands
-
-## Explore Cross browser multi environment settings

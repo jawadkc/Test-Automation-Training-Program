@@ -1,5 +1,16 @@
 # Completing Framework
 
+
+## Explore random selection using element Index
+
+## Explore read text and use it in subsequent Steps
+
+## Explore globals and external globals
+
+## Explore retries and cli Commands
+
+## Explore Cross browser multi environment settings
+
 ## Explore Page Props
 
 ## Reusable Steps

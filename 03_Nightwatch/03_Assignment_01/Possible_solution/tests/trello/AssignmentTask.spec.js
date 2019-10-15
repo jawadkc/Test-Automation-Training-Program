@@ -7,6 +7,8 @@ let cardPage;
 
 module.exports = {
 
+  '@tags': ['smoke', 'createToDelteUserStory'],
+
   before: (browser) => {
     loginPage = browser.page.trello.login();
     homePage = browser.page.trello.home();
