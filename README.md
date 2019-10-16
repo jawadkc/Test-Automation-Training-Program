@@ -74,3 +74,53 @@ We tried to develop further understanding of nightwatch and some framework impro
 * [Test Data](03_Nightwatch/04_Some_Framework_Improvements/README.md#test-data)
 * [External globals](03_Nightwatch/04_Some_Framework_Improvements/README.md#external-globals)
 * [Read and Use of value in subsequent steps](03_Nightwatch/04_Some_Framework_Improvements/README.md#read-and-use-value)
+
+## Lecture 6
+
+We tried to setup mocha, chai and supertest for some api testing
+
+Sample Project is available [here](04_Mocha_Supertest_Nightwatch/01_Mocha_Supertest/Sample_Project)
+
+The notes will be uploaded later
+
+#### Note: To run the tests make sure you update, `api_key`, `server_token` and `userId` the `data.js` in `utils` folder.
+
+```
+let api = {
+    base_url: "https://api.trello.com/1",
+    api_key: "your api key",
+    server_token: "your server token"
+}
+```
+
+and
+```
+var userId = 'your user id';
+```
+
+## Lecture 7
+
+We tried to mix our ui tests with api tests
+
+Sample Project is available [here](04_Mocha_Supertest_Nightwatch/02_Mocha_Supertest_Nightwatch/Sample_Project)
+
+The notes will be uploaded later
+
+#### Note: To run the tests make sure you update, `email`, `password`, `api_key`, `server_token` and `userId` the `data.js` in `util` folder.
+
+```
+let api = {
+  base_url: "https://api.trello.com/1",
+  api_key: "your api key",
+  server_token: "your server token"
+}
+```
+
+and
+```
+const userData = {
+  email: 'your email address',
+  password: 'your password',
+  userId:'your user id'
+}
+```

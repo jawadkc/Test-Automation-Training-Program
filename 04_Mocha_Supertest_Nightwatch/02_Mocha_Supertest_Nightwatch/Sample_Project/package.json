@@ -1,0 +1,25 @@
+{
+  "name": "trello-test-proj",
+  "version": "0.0.0",
+  "description": "TrelloTestProj",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jawadkc/-Test-Automation-Training-Program.git"
+  },
+  "author": {
+    "name": "Jawad Cheema"
+  },
+  "scripts": {
+    "test": "set LAUNCH_URL=https://trello.com/ && mocha ./tests/**/*"
+  },
+  "dependencies": {
+    "nightwatch": "1.2.4",
+    "chromedriver": "77.0.0",
+    "geckodriver": "1.18.0",
+    "chai": "^4.2.0",
+    "faker": "^4.1.0",
+    "mocha": "^6.2.0",
+    "supertest": "^4.0.2"
+  }
+}
