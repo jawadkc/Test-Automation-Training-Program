@@ -1,0 +1,17 @@
+{
+  "name": "api-testing",
+  "version": "1.0.0",
+  "description": "API test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests/**/*"
+  },
+  "author": "facucampi@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "faker": "^4.1.0",
+    "mocha": "^6.2.0",
+    "supertest": "^4.0.2"
+  }
+}
