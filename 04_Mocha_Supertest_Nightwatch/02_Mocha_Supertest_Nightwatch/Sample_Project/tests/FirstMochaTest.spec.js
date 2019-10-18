@@ -1,6 +1,6 @@
 const myasserts = require('chai').assert;
 const api = require('../steps/api/trello-endpoints');
-const nightwatch = require('../nightwatchRunner');
+const customNightwatchRunner = require('../nightwatchRunner');
 
 const data = require('../util/data');
 
@@ -26,7 +26,7 @@ describe('My First Mocha based UI and API Test', function() {
         }),
 
         it('Verify board creation behavior for new user', function(done) {
-            nightwatch.customTestRunner(
+            customNightwatchRunner.customTestRunner(
                 'AssignmentTask.spec.js', 
                 {
                     testData: data.userData, 
