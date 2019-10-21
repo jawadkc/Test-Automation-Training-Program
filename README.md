@@ -133,6 +133,17 @@ We explored a few other frameworks that can be alternates of frameworks and comp
 * [Codecpet JS](05_Other_Frameworks/README.md#codecept-js) and [Web Driver IO](05_Other_Frameworks/README.md#web-driver-io): A couple of frameworks that work quite similar to Nightwatch js
 * [Jest](05_Other_Frameworks/README.md#jest): An alternative of Mocha
 * [Cypress](05_Other_Frameworks/README.md#cypress): A framework that does not use webdrivers and apply in-browser testing approach
-* [Puppeteer](05_Other_Frameworks/README.md#puppeteer): A nodejs library to give a high-level api to control chrome/chromium
 
 We also discussed a few points towards framework selection as mentioned [here](05_Other_Frameworks/README.md#framework-selection).
+
+## Lecture 9
+
+We explored a bit about puppeteer
+
+* [Puppeteer](05_Other_Frameworks/README.md#puppeteer): A nodejs library to give a high-level api to control chrome/chromium
+
+Then we started our discussion towards CI/CD pipelines. For that we started of with a few basic discussions
+
+* [Definitions](06_Integration_and_Deployment_Pipelines/README.md)
+* [Git](06_Integration_and_Deployment_Pipelines/README.md#git)
+* [Docker](06_Integration_and_Deployment_Pipelines/README.md#docker)
