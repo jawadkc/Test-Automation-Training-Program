@@ -8,7 +8,7 @@
 - Build, test, and release frequently and with reliability
 - Requires automated delivery cycle and significant infrastructure changes
 
-image:: images/01_devops.jpg
+![Devops](images/01_devops.jpg)
 
 #### What is continuous
 
@@ -17,7 +17,7 @@ image:: images/01_devops.jpg
   * Build and unit test
   * Merge continuously, frequently, and minimally
 
-image:: images/02_CI.jpg
+![CI](images/02_CI.jpg)
 
 * Continuous Delivery
   * Ensure every change can be deployed
@@ -25,7 +25,7 @@ image:: images/02_CI.jpg
 * Continuous Deployment
   * Deploy every change to production automatically
 
-image:: images/03_continuous_delivery_deployment.jpg
+![Continuous delivery and deployment](images/03_continuous_delivery_deployment.jpg)
 
 * Continuous Testing
   * Generating virtual services and test data
@@ -45,7 +45,7 @@ An Interesting periodic table of devops tools is provided [here](https://xebiala
 
 Git is distributed repository in comparison to other version control solutions like SVN, TFVC. Here is an old report comparing their growth
 
-image:: images/04_svn_vs_git.png
+![Git](images/04_svn_vs_git.png)
 
 ##### Git stages
 
@@ -56,7 +56,7 @@ Git has three stages
 
 We can then link the local repository with global repository (remote)
 
-image:: images/05_git_stages.jpg
+![Git stages](images/05_git_stages.jpg)
 
 Following are a few commands that we looked at:
 
