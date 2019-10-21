@@ -56,7 +56,7 @@ Git has three stages
 
 We can then link the local repository with global repository (remote)
 
-![Git statges](images/05_git_stages.jpg)
+![Git stages](images/05_git_stages.jpg)
 
 Following are a few commands that we looked at:
 
