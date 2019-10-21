@@ -127,39 +127,23 @@ const userData = {
 
 ## Lecture 8
 
-We explored a few other frameworks that can be alternates of frameworks discussed above.
+We explored a few other frameworks that can be alternates of frameworks and components discussed so far like
 
-#### [Nightwatch-api](https://nightwatch-api.netlify.com)
-An independent repository providing control of Nightwatch by exposing it as chainable promise based API. Therefore making it possible to use with any test runner.
-Also, one interesting use of it demonstrated by the author is using cucumber as test runner. Its explanation is available [here](https://nightwatch-api.netlify.com/cucumber/) and code is available [here](https://github.com/mucsi96/nightwatch-api/tree/master/packages/cucumber-example)
+* [Nightwatch api](05_Other_Frameworks/README.md#nightwatch-api): A wrapper over Nightwatch to allow for more flexible framework structure
+* [Codecpet JS](05_Other_Frameworks/README.md#codecept-js) and [Web Driver IO](05_Other_Frameworks/README.md#web-driver-io): A couple of frameworks that work quite similar to Nightwatch js
+* [Jest](05_Other_Frameworks/README.md#jest): An alternative of Mocha
+* [Cypress](05_Other_Frameworks/README.md#cypress): A framework that does not use webdrivers and apply in-browser testing approach
 
-#### [Codecept JS](https://codecept.io/)
-An other e2e testing tool that provides BDD-style syntax. Can be a replacement of Nightwatch. Some interesting concepts in Codecept
-* Provides a bit different test components, e.g. [actors, pageobjects, page fragments](https://codecept.io/pageobjects)
-* Exposes API to perform some Web API (REST/GraphQL) requests in tests to perform data generation. https://codecept.io/data
-* [Datadriven possible](https://codecept.io/advanced#data-driven-tests)
+We also discussed a few points towards framework selection as mentioned [here](05_Other_Frameworks/README.md#framework-selection).
 
-Documentation available [here](https://codecept.io/) and a sample project available [here](https://codecept.io/examples) and [here](https://github.com/nifepo/TrueNorthChallenge)
+## Lecture 9
 
-#### [Web Driver IO](https://webdriver.io/)
-Some boilerplate projects are available [here](https://webdriver.io/docs/boilerplate.html)
+We explored a bit about puppeteer
 
-#### [Cypress](https://cypress.io)
-A complete e2e framework that is different because it does not require selenium or/any webdriver. It applies in-browser-testing and gives an interesting experience by combinning multiple libraries in a single frameworks. Documentation is very interesting and detailed. Including limitations, differences, etc
+* [Puppeteer](05_Other_Frameworks/README.md#puppeteer): A nodejs library to give a high-level api to control chrome/chromium
 
-- https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell
-- https://docs.cypress.io/guides/overview/key-differences.html#Architecture
-- https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Folder-Structure
-- https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html
-- https://docs.cypress.io/guides/core-concepts/interacting-with-elements.html
-- [You can stub out backend by handling network traffic](https://docs.cypress.io/guides/guides/network-requests.html)
-- [List of tools bundled together](https://docs.cypress.io/guides/references/bundled-tools.html#Mocha)
-- [Some limitations and tradeoff](https://docs.cypress.io/guides/references/trade-offs.html#Permanent-trade-offs-1)
+Then we started our discussion towards CI/CD pipelines. For that we started of with a few basic discussions
 
-They also provide a dashboard service for maintaining recorded tests and support running in CI/CD pipelines
-
-A sample project is available [here](https://github.com/cypress-io/cypress-example-todomvc)
-
-
-#### [Jest](https://jestjs.io/)
-Will be adding details later
+* [Definitions](06_Integration_and_Deployment_Pipelines/README.md)
+* [Git](06_Integration_and_Deployment_Pipelines/README.md#git)
+* [Docker](06_Integration_and_Deployment_Pipelines/README.md#docker)
