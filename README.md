@@ -152,9 +152,9 @@ Then we started our discussion towards CI/CD pipelines. For that we started of w
 
 We continued with some discussion on dockers and containers and we setup our project to run in containerized mode
 
-* [Docker Installation](06_Integration_and_Deployment_Pipelines/README.md#docker_installation)
+* [Docker Installation](06_Integration_and_Deployment_Pipelines/README.md#docker-installation)
 * [Exploring Dockers and containers](06_Integration_and_Deployment_Pipelines/README.md#exploring)
-* [Containerization of our project](06_Integration_and_Deployment_Pipelines/README.md#containerization_of_our_project)
+* [Containerization of our project](06_Integration_and_Deployment_Pipelines/README.md#containerization-of-our-project)
   * Updated the project files
   * Create Dockerfile
   * Create docker-compose files
