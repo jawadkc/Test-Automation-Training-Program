@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  workflows:
+    image: sampetodoacr.azurecr.io/workflows:latest
+    volumes:
+      - "./reports:/app/workflows/reports"
+    environment:
+      - LAUNCH_URL=${LAUNCH_URL}
+      - BASE_URL=${BASE_URL}
+      - API_KEY=${API_KEY}
+      - SERVER_TOKEN=${SERVER_TOKEN}
+      - USER_EMAIL=${USER_EMAIL}
+      - USER_PASSWORD=${USER_PASSWORD}
+      - USER_ID=${USER_ID}
+    networks:
+      internal:
+        aliases:
+          - workflows
+
+  selenium:
+    image: "selenium/standalone-chrome:3.141.59-vanadium"
+    ports:
+      - 4545:4444
+    volumes:
+      - /dev/shm:/dev/shm
+    networks:
+        internal:
+          aliases:
+            - selenium
+
+networks:
+  internal:

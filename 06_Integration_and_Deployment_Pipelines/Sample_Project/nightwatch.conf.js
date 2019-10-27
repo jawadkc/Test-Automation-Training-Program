@@ -24,7 +24,6 @@ function updateSettings(settings) {
     settings.test_settings.default = Object.assign({}, settings.test_settings.default, settings.test_settings.ci)
   }
   settings.test_settings.default.launch_url = process.env.LAUNCH_URL.trim() || "https://google.com/";
-  console.log(settings);
   return settings;
 }
 

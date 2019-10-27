@@ -11,15 +11,16 @@
     "name": "Jawad Cheema"
   },
   "scripts": {
-    "test:local:chrome": "RUN_ENV=dev mocha ./tests/**/*",
-    "test:local:firefox": "TARGET_BROWSER=firefox RUN_ENV=dev mocha ./tests/**/*",
-    "test:ci": "RUN_ENV=ci mocha ./tests/**/*"
+    "test:local:chrome": "RUN_ENV=dev mocha --reporter-options dot=-,xunit=reports/test_results.xml ./tests/**/*",
+    "test:local:firefox": "TARGET_BROWSER=firefox RUN_ENV=dev mocha --reporter-options dot=-,xunit=reports/test_results.xml ./tests/**/*",
+    "test:ci": "RUN_ENV=ci mocha --reporter-options dot=-,xunit=reports/test_results.xml ./tests/**/*"
   },
   "dependencies": {
     "nightwatch": "1.2.4",
     "chai": "^4.2.0",
     "faker": "^4.1.0",
     "mocha": "^6.2.0",
+    "mocha-multi": "1.1.3",
     "supertest": "^4.0.2"
   },
   "devDependencies": {
