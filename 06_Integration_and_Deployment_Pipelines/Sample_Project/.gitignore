@@ -1,0 +1,6 @@
+node_modules
+chromedriver.log
+tests_output
+debug.log
+.env
+reports/*

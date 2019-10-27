@@ -1,0 +1,54 @@
+{
+    "page_objects_path": ["pages"],
+    "globals": {
+      "waitForConditionTimeout": 30000,
+      "retryAssertionTimeout": 30000
+    },
+    "test_settings" : {
+        "default" : {
+            "launch_url": "https://google.com",
+            "webdriver" : {
+              "start_process" : true,
+              "server_path": "node_modules/.bin/chromedriver.cmd",
+              "port": 9515
+            },
+            "desiredCapabilities": {
+                "browserName": "chrome"
+            },
+            "screenshots": {
+              "enabled": true,
+              "on_failure": true,
+              "on_error": true,
+              "path": "./reports"
+            }
+        },
+        "firefox" : {
+            "webdriver" : {
+              "start_process" : true,
+              "server_path": "node_modules/.bin/chromedriver.cmd",
+              "port": 4444
+            },
+            "desiredCapabilities": {
+                "browserName": "firefox"
+            }
+        },
+        "ci" : {
+            "webdriver" : {
+              "default_path_prefix": "/wd/hub",
+              "host": "selenium",
+              "port": 4444
+            },
+            "desiredCapabilities": {
+                "browserName": "chrome",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true,
+                "chromeOptions": {
+                  "w3c": false,
+                  "args": [
+                    "--headless"
+                  ]
+                }
+            }
+        }
+    }
+}

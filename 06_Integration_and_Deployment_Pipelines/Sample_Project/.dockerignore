@@ -1,0 +1,22 @@
+.git
+.dockerignore
+
+# Dependencies
+node_modules/
+
+# Nightwatch directories
+reports/*
+screenshots/*
+logs/*
+
+# test runner helper script and compose files
+runTests.sh
+docker-compose.yml
+Dockerfile
+
+# artifacts and logs
+artifacts/
+selenium_logs
+
+# Ignore environment files
+.env
