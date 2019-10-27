@@ -148,7 +148,7 @@ Then we started our discussion towards CI/CD pipelines. For that we started of w
 * [Git](06_Integration_and_Deployment_Pipelines/README.md#git)
 * [Docker](06_Integration_and_Deployment_Pipelines/README.md#docker)
 
-## Lec 10
+## Lecture 10
 
 We continued with some discussion on dockers and containers and we setup our project to run in containerized mode
 
@@ -159,5 +159,22 @@ We continued with some discussion on dockers and containers and we setup our pro
   * Create Dockerfile
   * Create docker-compose files
   * Run tests
+
+Sample project is available [here](06_Integration_and_Deployment_Pipelines/Sample_Project)
+
+
+## Lecture 11
+
+We revisited some concepts and the set up azure pipeline
+
+* [Getting Started with Azure by setting up default ci/cd pipeline](06_Integration_and_Deployment_Pipelines/README.md#getting-started-with-azure)
+
+Then we started creating a project for our code and added pipeline
+
+* [Create project and push your code](06_Integration_and_Deployment_Pipelines/README.md#create-project-and-push-your-code)
+* [Add azure pipeline yaml file](06_Integration_and_Deployment_Pipelines/README.md#add-azure-pipeline-yaml-file)
+* [Add azure pipeline yaml file](06_Integration_and_Deployment_Pipelines/README.md#add-azure-pipeline-yaml-file)
+* [Other required changes](06_Integration_and_Deployment_Pipelines/README.md#other-required-changes)
+* [Run and observer](06_Integration_and_Deployment_Pipelines/README.md#run-and-observer)
 
 Sample project is available [here](06_Integration_and_Deployment_Pipelines/Sample_Project)

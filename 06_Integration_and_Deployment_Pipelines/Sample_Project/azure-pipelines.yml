@@ -1,0 +1,60 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+#
+trigger:
+- master
+
+stages:
+- stage: Tests
+  displayName: Build and Run Tests
+  jobs:
+  - job: E2E_Tests
+    displayName: Build and Run job
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      displayName: Login to ACR
+      inputs:
+        command: login
+        containerRegistry: dockerRegistryServiceConnection
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: workflows
+        containerRegistry: dockerRegistryServiceConnection
+        tags: |
+          latest
+    - task: DockerCompose@0
+      displayName: Run services
+      inputs:
+        action: Run services
+        azureSubscriptionEndpoint: testService
+        azureContainerRegistry: dockerRegistryServiceConnection
+        dockerComposeFile: docker-compose-ci.yml
+        projectName: $(Build.Repository.Name)
+        qualifyImageNames: true
+        abortOnContainerExit: true
+        detached: false
+        dockerComposeFileArgs: |
+          LAUNCH_URL=$(LAUNCH_URL)
+          BASE_URL=$(BASE_URL)
+          API_KEY=$(API_KEY)
+          SERVER_TOKEN=$(SERVER_TOKEN)
+          USER_EMAIL=$(USER_EMAIL)
+          USER_PASSWORD=$(USER_PASSWORD)
+          USER_ID=$(USER_ID)
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/reports/test_results.xml'
+        searchFolder: '$(System.DefaultWorkingDirectory)' # Optional
+        mergeTestResults: false # Optional
+        failTaskOnFailedTests: true # Optional
+        # testRunTitle: # Optional
+        # buildPlatform: # Optional
+        # buildConfiguration: # Optional
+        # publishRunAttachments: true # Optional

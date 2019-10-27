@@ -7,6 +7,7 @@ const data = require('../util/data');
 describe('My First Mocha based UI and API Test', function() {
 
     describe("Checking default behaior of user boards", function() {
+        before(done => setTimeout(done, 30000));
 
         it('Clear all boards', async function() {
             boardsList = await api.getBoardsIds(myasserts,

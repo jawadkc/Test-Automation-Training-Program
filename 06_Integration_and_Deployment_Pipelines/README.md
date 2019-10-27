@@ -165,7 +165,7 @@ $ docker run -t -i test-image bash
 # ls some_directory
 ```
 
-#### Containerization of our project
+## Containerization of our project
 For executing our workflows in containerized mode, we would like to run selenium in its own container while our workflows run in their own container. We can use pre-build selenium docker containers provided by selenium HQ [here](https://github.com/SeleniumHQ/docker-selenium). They can easily be run using commands as provided in [README](https://github.com/SeleniumHQ/docker-selenium#running-the-images)
 
 For our workflows we will have to make some configuration changes
@@ -285,3 +285,170 @@ npm run test:local:firefox
 Note: firefox one is a bit flacky. Did not yet had time to look at it.
 
 The sample project is available [here](./Sample_Project)
+
+## Setting up azure pipeline
+
+#### Getting Started with Azure
+
+You can signup for azure and get 200 USD and one year free (whichever runs out first).
+
+After signup, let us start a quick project with ci/cd pipeline to explore possible features just to explore the project and its pipeline
+
+![Start a CI/CD for Nodejs project](images/06_Azure_default_ci_cd_project_01.gif)
+
+After starting the project, it will process for a bit and deploy the required resources. You can navigate around to explore after the project is deployed
+
+![Explore the project, the repository and pipeline](images/06_Azure_default_ci_cd_project_02.gif)
+
+Also, explore the vNext build setup options
+
+![Explore the vNext build options for build pipeline](images/06_Azure_default_ci_cd_project_03.gif)
+
+Then explore the vNext build steps for release and also view the unit and ui test results
+
+![Explore the vNext release options and explore test results](images/06_Azure_default_ci_cd_project_04.gif)
+
+#### Create a project for your code and setup a pipeline using YAML
+
+##### Create project and push your code
+
+Create a new Project in
+
+![Create a new Project](images/07_Azure_New_Project.gif)
+
+In your current source code folder run, initialize git respository if not already done using
+```
+git init
+git config user.email "your email address"
+git config user.name "Jawad Cheema"
+git add .
+git commit -m "Initial Project"
+```
+
+If its already initialized then you can rename existing remote origin and point the origin to your newly created respository and push your code
+
+```bash
+git remote rename origin oldOrigin
+git remote add origin git@ssh.dev.azure.com:v3/auto-trainers/New%20Automation%20Project/New%20Automation%20Project # this command is copied form the newly created project
+git push -u origin --all
+```
+
+##### Add azure pipeline yaml file
+
+Create a `azure-pipelines.yml` file and add following steps to it
+
+You can read about yaml schema [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema)
+
+* Docker task to login to acr
+  ```yml
+  - task: Docker@2
+    displayName: Login to ACR
+    inputs:
+      command: login
+      containerRegistry: dockerRegistryServiceConnection
+  ```
+  More info [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops#login)
+
+* Docker task to build and push
+  ```yml
+  - task: Docker@2
+    displayName: Build and push an image to container registry
+    inputs:
+      command: buildAndPush
+      repository: workflows
+      containerRegistry: dockerRegistryServiceConnection
+      tags: |
+        latest
+  ```
+  More info [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops#build-and-push)
+
+* Docker compose task to run services
+  ```yml
+  - task: DockerCompose@0
+    displayName: Run services
+    inputs:
+      action: Run services
+      azureSubscriptionEndpoint: testService
+      azureContainerRegistry: dockerRegistryServiceConnection
+      dockerComposeFile: docker-compose-ci.yml
+      projectName: $(Build.Repository.Name)
+      qualifyImageNames: true
+      abortOnContainerExit: true
+      detached: false
+      dockerComposeFileArgs: |
+        LAUNCH_URL=$(LAUNCH_URL)
+        BASE_URL=$(BASE_URL)
+        API_KEY=$(API_KEY)
+        SERVER_TOKEN=$(SERVER_TOKEN)
+        USER_EMAIL=$(USER_EMAIL)
+        USER_PASSWORD=$(USER_PASSWORD)
+        USER_ID=$(USER_ID)
+  ```
+  More info [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker-compose?view=azure-devops#run-service-images)
+
+* Publish results task to publish results
+  ```yml
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/reports/test_results.xml'
+      searchFolder: '$(System.DefaultWorkingDirectory)' # Optional
+      mergeTestResults: false # Optional
+      failTaskOnFailedTests: true # Optional
+      # testRunTitle: # Optional
+      # buildPlatform: # Optional
+      # buildConfiguration: # Optional
+      # publishRunAttachments: true # Optional
+  ```
+  More info [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=yaml#yaml-snippet)
+
+##### Other required changes
+* Add a docker-compose file for ci. Note the image path and url needs to be updated to point to your registery and repository
+  ```yml
+  version: '3.7'
+
+  services:
+    workflows:
+      image: sampetodoacr.azurecr.io/workflows:latest
+      volumes:
+        - "./reports:/app/workflows/reports"
+      environment:
+        - LAUNCH_URL=${LAUNCH_URL}
+        - BASE_URL=${BASE_URL}
+        - API_KEY=${API_KEY}
+        - SERVER_TOKEN=${SERVER_TOKEN}
+        - USER_EMAIL=${USER_EMAIL}
+        - USER_PASSWORD=${USER_PASSWORD}
+        - USER_ID=${USER_ID}
+      networks:
+        internal:
+          aliases:
+            - workflows
+
+    selenium:
+      image: "selenium/standalone-chrome:3.141.59-vanadium"
+      ports:
+        - 4545:4444
+      volumes:
+        - /dev/shm:/dev/shm
+      networks:
+          internal:
+            aliases:
+              - selenium
+
+  networks:
+    internal:
+  ```
+* A few changes in package.json and mocharc.js to allow mocha to report in cli and junit report
+  * add package `"mocha-multi": "1.1.3"``
+  * add `--reporter-options dot=-,xunit=reports/test_results.xml` to mocha test run scripts in `package.json`
+  * add `reporter: 'mocha-multi',` in `.mocharc.js`
+
+* Associate required azure portal resources and point project to yaml file. Add environment variables
+
+![Complete setup](images/08_Azure_Complete_Setup.gif)
+
+##### Run and observer
+* Once the builds completes you can view the build details and test results
+
+![View job results and test results](images/09_Azure_Job_and_Test_Results.gif)
