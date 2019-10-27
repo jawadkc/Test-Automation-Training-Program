@@ -147,3 +147,17 @@ Then we started our discussion towards CI/CD pipelines. For that we started of w
 * [Definitions](06_Integration_and_Deployment_Pipelines/README.md)
 * [Git](06_Integration_and_Deployment_Pipelines/README.md#git)
 * [Docker](06_Integration_and_Deployment_Pipelines/README.md#docker)
+
+## Lec 10
+
+We continued with some discussion on dockers and containers and we setup our project to run in containerized mode
+
+* [Docker Installation](06_Integration_and_Deployment_Pipelines/README.md#docker_installation)
+* [Exploring Dockers and containers](06_Integration_and_Deployment_Pipelines/README.md#exploring)
+* [Containerization of our project](06_Integration_and_Deployment_Pipelines/README.md#containerization_of_our_project)
+  * Updated the project files
+  * Create Dockerfile
+  * Create docker-compose files
+  * Run tests
+
+Sample project is available [here](06_Integration_and_Deployment_Pipelines/Sample_Project)

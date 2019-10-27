@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  workflows:
+    build: .
+    env_file:
+      - ./.env
+    volumes:
+      - "./reports:/my_test_code/reports"
+    networks:
+      internal:
+        aliases:
+          - workflows
+
+  selenium:
+    image: "selenium/standalone-chrome:3.141.59-vanadium"
+    ports:
+      - 4444:4444
+    volumes:
+      - /dev/shm:/dev/shm
+    networks:
+        internal:
+          aliases:
+            - selenium
+
+networks:
+  internal:

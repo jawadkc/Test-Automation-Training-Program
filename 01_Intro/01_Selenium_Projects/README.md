@@ -68,3 +68,4 @@ We can use Selenium WebDriver to do the following:
 11. https://github.com/SeleniumHQ/selenium/wiki/Selenium-Grid-4
 12. https://testsigma.com/blog/selenium-4-automation-engineer-expect/
 13. https://medium.com/@4400vijay/selenium-4-alpha-is-released-whats-new-7fce5e8cd926
+14. https://seleniumhq.github.io/selenium/docs/api/javascript/
