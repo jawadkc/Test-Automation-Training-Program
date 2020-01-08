@@ -178,3 +178,64 @@ Then we started creating a project for our code and added pipeline
 * [Run and observer](06_Integration_and_Deployment_Pipelines/README.md#run-and-observer)
 
 Sample project is available [here](06_Integration_and_Deployment_Pipelines/Sample_Project)
+
+
+## Lecture 12
+
+#### Setup Grid
+
+https://github.com/SeleniumHQ/docker-selenium#selenium-grid-hub-and-nodes
+
+A couple of options:
+* [Directly using Docker](https://github.com/SeleniumHQ/docker-selenium#using-docker-networking)
+* [Using docker-compose](https://github.com/SeleniumHQ/docker-selenium#via-docker-compose)
+* [Using docker-compose with swarn support](https://github.com/SeleniumHQ/docker-selenium#version-3-with-swarm-support)
+* [Using kubernetes](https://github.com/kubernetes/examples/tree/master/staging/selenium)
+* [Using Helm charts](https://github.com/helm/charts/tree/master/stable/selenium)
+
+Using Docker swarm:
+```bash
+docker build -t workflows:latest .
+docker swarm init
+docker stack deploy -c docker-compose-grid.yml grid
+docker service ls
+docker service logs -f grid_workflows
+docker stack rm grid
+docker swarm leave -f
+```
+
+
+#### Success Factors:
+* Clear identification of purpose and goals of Automation
+* Identification of current team as well as potential new highers
+* Improving test-ability and automate-ability of system-under-test
+* Taking all stack holders on board
+* For any new automation project / New change focus on some key but easy test scenario for creating a POC
+* Test Scenarios to be automated should come from QA team
+* Manual Testing team should be aware of whats covered by automation
+* Dev team should continuously be made aware of the changes made by them that broke the workflows and if possible they should be responsible of fixing those before deploying to any test/staging environments.
+* Test suites should be executable on different environments so that their utilization scope can be increased.
+* Test suite performance should be considered such that once should be able to get results as early as possible. This can help in increased utilization and invovlment from all team members
+* The code should be made moduler but just enough that it does not require testing of its own
+* Frequently change data set for the tests
+* Test could should follow proper coding guidelines (i.e. eslint rules should be setup for your tests)
+* Test files should be properly commented (preferably following a standard like jsdocs to auto generate documentation using it)
+* A few KPIs to measure
+  * What are the typical false positives and how they can be mitigated
+  * Monitor the life of a test. i.e. Time between any update required. Frequency of updates required for a test. Time duration in which the test remains out-of-date and disabled
+  * Test run performance and how new tests effect the performance
+  * Ability of a test to be executed against different environments
+  * Life cycle of test data
+
+#### Career Growth:
+* Continuous learning is the key
+* Always start with minimal and learn as you go
+* Explore different open source projects to learn how others are doing it
+* Join different slack channels, chats, follow different repositories
+* Learn under the hood stuff to be able to make more better decisions
+* Sharing knowledge will always increase yours too so never hesitate. Infact, forcefully make your self to share. I do not say always do it for free ;).
+
+#### Reach out to me at
+jawad.k.cheema@gmail.com
++92 321 4189015
+Keep an eye on this project and feel free to share any feedback.
