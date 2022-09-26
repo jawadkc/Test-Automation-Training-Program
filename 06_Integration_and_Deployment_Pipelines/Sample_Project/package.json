@@ -16,7 +16,7 @@
     "test:ci": "RUN_ENV=ci mocha --reporter-options dot=-,xunit=reports/test_results.xml ./tests/**/*"
   },
   "dependencies": {
-    "nightwatch": "1.2.4",
+    "nightwatch": "1.7.13",
     "chai": "^4.2.0",
     "faker": "^4.1.0",
     "mocha": "^6.2.0",
