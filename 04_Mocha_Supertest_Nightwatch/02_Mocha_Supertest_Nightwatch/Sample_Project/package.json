@@ -14,7 +14,7 @@
     "test": "set LAUNCH_URL=https://trello.com/ && mocha ./tests/**/*"
   },
   "dependencies": {
-    "nightwatch": "1.2.4",
+    "nightwatch": "1.7.13",
     "chromedriver": "77.0.0",
     "geckodriver": "1.18.0",
     "chai": "^4.2.0",
