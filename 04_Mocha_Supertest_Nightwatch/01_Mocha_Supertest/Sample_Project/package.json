@@ -11,7 +11,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "faker": "^4.1.0",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "supertest": "^4.0.2"
   }
 }
